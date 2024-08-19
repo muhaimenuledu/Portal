@@ -56,22 +56,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "params":{
                             "name": "' . $name . '",
                             "email": "' . $email . '",
-                            "sales_department": "' . $sales_department . '",
+                            "sale_dept": "' . $sales_department . '",
                             "date": "' . $date . '",
                             "profile_name": "' . $profile_name . '",
                             "client_user_id": "' . $client_user_id . '",
                             "client_name": "' . $client_name . '",
-                            "order_number": "' . $order_number . '",
+                            "order_num": "' . $order_number . '",
                             "order_link": "' . $order_link . '",
                             "remarks": "' . $remarks . '",
                             "assigned_team": "' . $assigned_team . '",
                             "order_status": "' . $order_status . '",
-                            "service_line": "' . $service_line . '",
-                            "delivered_by": "' . $delivered_by . '",
+                            "service_lane": "' . $service_line . '",
+                            "deli_by": "' . $delivered_by . '",
                             "deli_date": "' . $deli_date . '",
-                            "deli_amount": "' . $deli_amount . '",
+                            "deli_amo": "' . $deli_amount . '",
                             "deadline": "' . $deadline . '",
-                            "platform_status": "' . $platform_status . '"
+                            "platform_stat": "' . $platform_status . '"
                         }
             }',
             CURLOPT_HTTPHEADER => array(
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ));
 
         $response = curl_exec($curl);
-
+// echo $response;
     curl_close($curl);
 
 
