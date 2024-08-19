@@ -3,21 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit Data</title>
+    <title>Employee Assignments & Orders</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a; /* Dark background */
+            color: #f5f5f5; /* Light text */
+        }
+
+        .input-field {
+            background-color: #333333; /* Darker input background */
+            border-color: #444444; /* Border with subtle contrast */
+            color: #f5f5f5; /* Light text */
+        }
+
+        .input-field::placeholder {
+            color: #aaaaaa; /* Lighter placeholder text */
+        }
+
+        .btn-submit {
+            background-color: #000000; /* Black button background */
+            color: #ffffff; /* White text */
+        }
+
+        .btn-submit:hover {
+            background-color: #333333; /* Slightly lighter on hover */
+        }
+
+        .form-container {
+            background-color: #2c2c2c; /* Slightly lighter form background */
+        }
+
+        .label-text {
+            color: #dddddd; /* Softer white for labels */
+        }
+    </style>
 </head>
-<body>
-    <h2>Submit Your Data</h2>
-    <form action="submit.php" method="post">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-        
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" required></textarea><br><br>
-        
-        <input type="submit" value="Submit">
-    </form>
+<body class="p-6">
+    <div class="max-w-4xl mx-auto p-8 rounded-lg shadow-lg form-container">
+        <h1 class="text-2xl font-bold mb-6 text-white">Employee Assignments & Orders</h1>
+        <form id="assignment-form" action="submit.php" method="POST" class="space-y-4">
+            <div>
+                <label class="block label-text">Employee Name:</label>
+                <input type="text" name="employee_name" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field" placeholder="ABC">
+            </div>
+            <div>
+                <label class="block label-text">Sales Department:</label>
+                <select name="sales_department" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field">
+                    <option>Mobile App</option>
+                    <option>Website</option>
+                    <option>Graphics Design</option>
+                </select>
+            </div>
+            <div>
+                <label class="block label-text">Date:</label>
+                <input type="date" name="date" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field">
+            </div>
+            <div>
+                <label class="block label-text">Profile Name:</label>
+                <input type="text" name="profile_name" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field" placeholder="Wix Buddy || App Geniee">
+            </div>
+            <div>
+                <label class="block label-text">Client User ID:</label>
+                <input type="text" name="client_user_id" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field" placeholder="Jems">
+            </div>
+            <div>
+                <label class="block label-text">Client Name:</label>
+                <input type="text" name="client_name" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field" placeholder="Jems Bond">
+            </div>
+            <div>
+                <label class="block label-text">Email Address:</label>
+                <input type="email" name="email_address" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field" placeholder="email@example.com">
+            </div>
+            <div>
+                <label class="block label-text">Order Number:</label>
+                <input type="number" name="order_number" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field" placeholder="123456">
+            </div>
+            <div>
+                <label class="block label-text">Order Link:</label>
+                <input type="url" name="order_link" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field" placeholder="https://orderlink.com">
+            </div>
+            <div>
+                <label class="block label-text">Remarks:</label>
+                <input type="text" name="remarks" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field" placeholder="ABC">
+            </div>
+            <div>
+                <label class="block label-text">Assigned Team:</label>
+                <input type="text" name="assigned_team" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field" placeholder="Team Alpha">
+            </div>
+            <div>
+                <label class="block label-text">Order Status:</label>
+                <select name="order_status" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field">
+                    <option>NRA</option>
+                    <option>WIP</option>
+                    <option>Delivered</option>
+                </select>
+            </div>
+            <div>
+                <label class="block label-text">Service Line:</label>
+                <select name="service_line" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field">
+                    <option>Mobile App</option>
+                    <option>Website</option>
+                    <option>Graphics Design</option>
+                </select>
+            </div>
+            <div>
+                <label class="block label-text">Delivered By:</label>
+                <input type="text" name="delivered_by" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field" placeholder="John Doe">
+            </div>
+            <div>
+                <label class="block label-text">Deli Date:</label>
+                <input type="date" name="deli_date" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field">
+            </div>
+            <div>
+                <label class="block label-text">Deli Amount:</label>
+                <input type="number" name="deli_amount" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field" placeholder="$5000">
+            </div>
+            <div>
+                <label class="block label-text">Deadline:</label>
+                <input type="date" name="deadline" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field">
+            </div>
+            <div>
+                <label class="block label-text">Platform Status:</label>
+                <select name="platform_status" class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-white focus:border-white input-field">
+                    <option>Fiverr</option>
+                    <option>Upwork</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit" class="w-full py-2 px-4 rounded-md btn-submit focus:outline-none focus:ring-2 focus:ring-offset-2">Save</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
